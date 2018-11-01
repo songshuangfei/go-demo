@@ -23,11 +23,13 @@ func Api(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
 //handler函数
 func carouselHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	io.WriteString(w, "carousel")
 	io.WriteString(w, r.URL.Query().Encode())
 }
 
 func hotAuthorsHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	io.WriteString(w, "hot Authors")
 	io.WriteString(w, r.URL.Query().Encode())
 }
